@@ -1,0 +1,204 @@
+body {
+    font: 400 24px/30px "TildaSans";
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.title {
+    font: 700 1.5em/0.9em "TilsaSans";
+}
+
+.title_home {
+    font: 700 3em/0.9em "TilsaSans";
+}
+
+.title_component {
+    font: 700 2.8em "TildaSans";
+    margin-bottom: 8px;
+}
+
+.title_product {
+    font: 700 1em "TildaSans";
+}
+
+.paragraph_component {
+    font: 400 0.75em/1em "TildaSans";
+}
+
+.link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.link_nav {
+    display: block;
+}
+.link_nav:hover {
+    text-decoration: underline;
+}
+
+.button {
+    align-self: flex-start;
+    padding: 15px;
+    background-color: #bce587;
+    border-radius: 20px;
+    border: 2px #000000 solid;
+    transition: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #6a9334;
+    transition: 0.3s;
+}
+
+.img{
+    border-radius: 20px;
+    width: 100%;
+}
+
+.header {
+    padding: 25px 40px;
+    background-color: #9FDC50;
+}
+
+.header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section_home .wrapper {
+    display: flex;
+}
+
+.section_about .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-panel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-panel__item {
+    display: block;
+    list-style-type: none;
+}
+
+.section {
+    padding: 40px;
+    background-color: #9FDC50;
+}
+
+.section_alt {
+    background-color: #FFFFFF;
+}
+
+.home-article {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.home-list {
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-between; */
+}
+
+.home-list__element {
+    padding: 15px;
+    height: 150px;
+    width: 150px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.home-list__element:nth-child(2) {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.about-article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-article > * {
+    max-width: 350px;
+}
+
+.about-article .img {
+    display: block;
+}
+
+.about__description {
+    flex-grow: 2;
+}
+
+.about__description .paragraph {
+    font: 400 0.8em/1.1em "TildaSans";
+}
+
+.about-pros {
+    display: flex;
+    /* gap: 30px; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-pros__item {
+    width: 210px;
+    background-color: #bce587;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.about-pros__item .icon {
+    margin-bottom: 15px;
+}
+
+.about-pros .paragraph {
+    font: 400 0.8em/1.1em "TildaSans";
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.products-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    width: 250px;
+    /* border: 2px #000000 solid; */
+    border-radius: 20px;
+    background-color: #FFFFFF;
+}
+
+.products-item .button {
+    align-self: center;
+}
+
+@font-face {
+    font-family: "TildaSans";
+    src: url(assets/fonts/TildaSans-VF.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
