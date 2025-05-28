@@ -201,6 +201,10 @@ body {
     align-self: center;
 }
 
+.waste-container {
+    display: flex;
+}
+
 .contacts-list {
     display: flex;
     flex-direction: column;
