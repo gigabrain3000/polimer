@@ -1,1 +1,3 @@
-console.log(1);
+import { initMap } from "./map.js";
+initMap();
+// document.addEventListener("load", initMap);
