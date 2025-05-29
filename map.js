@@ -23,23 +23,7 @@ async function initMap() {
       }
     }
   );
-
-  const markerElement = document.createElement('div');
-  markerElement.className = 'marker-class';
-  markerElement.innerText = "I'm marker!";
-
-  const marker = new YMapMarker(
-    {
-        source: 'markerSource',
-        coordinates: [53.885437, 30.280879],
-        draggable: true,
-        mapFollowsOnDrag: true
-    },
-    markerElement
-  );
-
+  
   // Добавляем слой для отображения схематической карты
   map.addChild(new YMapDefaultSchemeLayer());
-  
-  map.addChild(marker);
 }
