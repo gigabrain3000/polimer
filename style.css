@@ -85,6 +85,11 @@ body {
     gap: 30px;
 }
 
+.footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -212,8 +217,7 @@ body {
 }
 
 .map {
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 500px;
 }
 
 @font-face {
