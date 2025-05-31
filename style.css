@@ -42,6 +42,10 @@ body {
     justify-content: space-between;
 }
 
+.footer .wrapper {
+    flex-wrap: wrap;
+}
+
 .section {
     padding: 60px 40px;
     background-color: #FFFFFF;
@@ -51,17 +55,14 @@ body {
 .section_waste .wrapper {
     flex-direction: column;
     gap: 30px;
+    align-items: center;
+    text-align: center;
 }
 
 .section_products,
 .footer {
   background-color: #050b68;
   color: #FFFFFF;
-}
-
-.section_products {
-    align-items: center;
-    text-align: center;
 }
 
 .section_home {
@@ -124,7 +125,20 @@ body {
 }
 
 .splide__pagination {
-    bottom: 0;
+    bottom: -30px !important;
+}
+
+.section_products .splide__pagination__page.is-active {
+    opacity: 1;
+}
+
+.section_waste .splide__pagination__page {
+    background-color: #050b68;
+}
+
+.section_waste .splide__pagination__page.is-active {
+    background-color: #050b68;
+    opacity: 1;
 }
 
 .products-item {
@@ -137,7 +151,6 @@ body {
     border-radius: 20px;
     background-color: #FFFFFF;
     color: #000000;
-    border: 2px #000000 solid;
 }
 
 .products-item .img {
@@ -155,7 +168,11 @@ body {
 .contacts-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+}
+
+.contacts-list__item {
+    font-size: 1.2em;
 }
 
 .map {
@@ -186,12 +203,20 @@ body {
     text-decoration: none;
 }
 
-.link_nav {
-    display: block;
+.link_contacts {
+    color: #FFFFFF;
+    transition: 0.3s;
 }
 
-.link_nav:hover {
+.link_nav {
+    display: block;
+    transition: 0.3s;
+}
+
+.link_nav:hover,
+.link_contacts:hover {
     text-decoration: underline;
+    transition: 0.3s;
 }
 
 .paragraph {
@@ -213,7 +238,6 @@ body {
 }
 
 .button {
-    /* align-self: flex-start; */
     padding: 15px;
     background-color: #FFFFFF;
     border-radius: 20px;
@@ -223,13 +247,98 @@ body {
 
 .button:hover {
     cursor: pointer;
-    background-color: #6a9334;
+    background-color: #050b68;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
     transition: 0.3s;
 }
 
 .img{
     border-radius: 20px;
     width: 100%;
+}
+
+@media (max-width: 960px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .nav-panel {
+        display: none;
+    }
+
+    .about-pros__item {
+        width: 250px;
+    }
+
+    .footer .title {
+        margin-bottom: 20px;
+    }
+
+    .contacts-list {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .header {
+        padding: 20px 32px;
+    }
+
+    .section {
+        padding: 40px 40px 60px 40px;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        font-size: 16px;
+    }
+
+    .title_home {
+        font-size: 3.5em;
+    }
+
+    .section_about .wrapper,
+    .about-pros,
+    .section_products .wrapper,
+    .section_waste .wrapper {
+        gap: 20px;
+    }
+
+    .about-pros__item,
+    .products-item {
+        gap: 13px;
+    }
+
+    .products-item .button {
+        padding: 10px;
+    }
+
+    .contacts-list__item {
+        line-height: 1.2em;
+    }
+}
+
+@media (max-width: 370px) {
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .title_home {
+        font-size: 3em;
+    }
+
+    .paragraph_description {
+        font-size: 1.1em;
+    }
 }
 
 @font-face {
