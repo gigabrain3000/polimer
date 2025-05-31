@@ -41,15 +41,15 @@ export {initMap};
 async function initMap() {
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls } = ymaps3;
+  const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
 
   // Инициализация карты
   const map = new YMap(
     document.querySelector('.map'),
     {
       location: {
-        center: [53.88556, 30.28070], // Центрируем карту на нужной точке
-        zoom: 15, // Оптимальный масштаб для видимости маркера
+        center: [30.28070, 53.88556], // Центрируем карту на нужной точке
+        zoom: 12, // Оптимальный масштаб для видимости маркера
       },
       controls: ['zoomControl'] // Добавляем элементы управления масштабом
     }
@@ -57,13 +57,14 @@ async function initMap() {
 
   // Добавляем слой карты
   map.addChild(new YMapDefaultSchemeLayer());
+  map.addChild(new YMapDefaultFeaturesLayer());
 
   // Добавляем маркер
   const marker = new YMapMarker({
-    coordinates: [53.88556, 30.28070], // Координаты маркера
+    coordinates: [30.28070, 53.88556], // Координаты маркера
     draggable: false, // Маркер статичен
     icon: '<div style="width: 20px; height: 20px; background-color: red; border-radius: 50%;"></div>' // Простая стилизация маркера
-  });
+  }, content);
 
   map.addChild(marker);
 
