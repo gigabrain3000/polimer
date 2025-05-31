@@ -1,7 +1,7 @@
 export async function initMap() {
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
+  const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer, YMapZoomControl } = ymaps3;
 
   // Инициализация карты
   const map = new YMap(
