@@ -28,18 +28,18 @@ export async function initMap() {
   // });
 
   // map.addChild(marker);
-  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/@yandex/ymaps3-default-ui-theme', [
-  '@yandex/ymaps3-default-ui-theme@0.0.19'
-]);
+//   ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/@yandex/ymaps3-default-ui-theme', [
+//   '@yandex/ymaps3-default-ui-theme@0.0.19'
+// ]);
 
 // после этого можем импортировать компоненты из пакета в проект
-const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
-map.addChild(
-  new YMapDefaultMarker({
-    coordinates: [30.28070, 53.88556],
-    title: 'Полимерснабжение'
-  })
-);
+// const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
+// map.addChild(
+//   new YMapDefaultMarker({
+//     coordinates: [30.28070, 53.88556],
+//     title: 'Полимерснабжение'
+//   })
+// );
 
 const controls = new YMapControls();
 controls.addChild(
