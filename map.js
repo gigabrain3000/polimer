@@ -1,44 +1,4 @@
-export {initMap};
-
-
-// async function initMap() {
-//   await ymaps3.ready;
-//   ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@latest');
-
-//   const { YMap, YMapDefaultSchemeLayer } = ymaps3;
-//   const { YMapDefaultMarker, YMapZoomControl, YMapGeolocationControl } = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
-
-//   // Инициализация карты
-//   const map = new YMap(
-//     document.querySelector('.map'),
-//     {
-//       location: {
-//         center: [53.88556, 30.28070], // Координаты Челюскинцев 155
-//         target: [53.88556, 30.28070],
-//         zoom: 15 // Увеличенный масштаб для лучшей видимости маркера
-//       }
-//     }
-//   );
-
-//   // Добавляем слой карты
-//   map.addChild(new YMapDefaultSchemeLayer());
-
-//   map.YMapGeolocationControl({
-
-//   })
-
-//   // Добавляем элементы управления (увеличение/уменьшение масштаба)
-//   map.addChild(new YMapZoomControl());
-
-//   // Добавляем маркер на нужные координаты
-//   const marker = new YMapDefaultMarker({
-//     coordinates: [53.88555853854745, 30.280704395752316], // Координаты Челюскинцев 155
-//     title: "Полимерснабжение" // Подпись маркера
-//   });
-
-//   map.addChild(marker);
-// }
-async function initMap() {
+export async function initMap() {
   await ymaps3.ready;
 
   const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
@@ -49,9 +9,10 @@ async function initMap() {
     {
       location: {
         center: [30.28070, 53.88556], // Центрируем карту на нужной точке
-        zoom: 12, // Оптимальный масштаб для видимости маркера
+        zoom: 15, // Оптимальный масштаб для видимости маркера
       },
-      controls: ['zoomControl'] // Добавляем элементы управления масштабом
+      controls: ['zoomControl'], // Добавляем элементы управления масштабом
+      showScaleInCopyrights: true,
     }
   );
 
@@ -60,15 +21,32 @@ async function initMap() {
   map.addChild(new YMapDefaultFeaturesLayer());
 
   // Добавляем маркер
-  const marker = new YMapMarker({
-    coordinates: [30.28070, 53.88556], // Координаты маркера
-    draggable: false, // Маркер статичен
-    icon: '<div style="width: 20px; height: 20px; background-color: red; border-radius: 50%;"></div>' // Простая стилизация маркера
-  }, content);
+  // const marker = new YMapMarker({
+  //   coordinates: [30.28070, 53.88556], // Координаты маркера
+  //   draggable: false, // Маркер статичен
+  //   icon: '<div style="width: 20px; height: 20px; background-color: red; border-radius: 50%;"></div>' // Простая стилизация маркера
+  // });
 
-  map.addChild(marker);
+  // map.addChild(marker);
+  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', [
+  '@yandex/ymaps3-default-ui-theme@<PACKAGE_VERSION_HERE>'
+]);
 
-  // Добавляем элементы управления
-  const controls = new YMapControls({ position: 'right' });
-  map.addChild(controls);
+// после этого можем импортировать компоненты из пакета в проект
+const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
+map.addChild(
+  new YMapDefaultMarker({
+    coordinates: [30.28070, 53.88556],
+    title: 'Полимерснабжение'
+  })
+);
+
+const controls = new YMapControls();
+controls.addChild(
+  new YMapZoomControl({
+    easing: 'linear'
+  })
+);
+
+map.addChild(controls);
 }
