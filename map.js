@@ -1,7 +1,7 @@
 export async function initMap() {
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
+  const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
 
   // Инициализация карты
   const map = new YMap(
@@ -9,7 +9,7 @@ export async function initMap() {
     {
       location: {
         center: [30.28070, 53.88556], // Центрируем карту на нужной точке
-        zoom: 15, // Оптимальный масштаб для видимости маркера
+        zoom: 17, // Оптимальный масштаб для видимости маркера
       },
       controls: ['zoomControl'], // Добавляем элементы управления масштабом
       showScaleInCopyrights: true,
@@ -28,8 +28,8 @@ export async function initMap() {
   // });
 
   // map.addChild(marker);
-  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', [
-  '@yandex/ymaps3-default-ui-theme@<PACKAGE_VERSION_HERE>'
+  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/@yandex/ymaps3-default-ui-theme', [
+  '@yandex/ymaps3-default-ui-theme@0.0.19'
 ]);
 
 // после этого можем импортировать компоненты из пакета в проект
