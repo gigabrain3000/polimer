@@ -27,6 +27,6 @@ async function initMap() {
   );
   
   // Добавляем слой для отображения схематической карты
-  // map.addChild(new YMapDefaultSchemeLayer());
-  map.addChild(new YMapDefaultMarker(props));
+  map.addChild(new YMapDefaultSchemeLayer());
+  map.addChild(new YMapDefaultMarker(YMapGeolocationControl, YMapZoomControl));
 }
