@@ -47,6 +47,10 @@ body {
 }
 
 .footer .wrapper {
+    gap: 30px;
+}
+
+.footer .wrapper {
     flex-wrap: wrap;
 }
 
@@ -180,7 +184,7 @@ body {
 }
 
 .map {
-    width: 400px;
+    flex-grow: 2;
     height: 320px;
 }
 
